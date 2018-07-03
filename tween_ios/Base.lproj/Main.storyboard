@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tween_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WbB-8y-V6Q">
-                                <rect key="frame" x="0.0" y="-65" width="375" height="130"/>
+                                <rect key="frame" x="0.0" y="-65" width="414" height="130"/>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.58823529409999997" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="pNE-Wd-T0t"/>
@@ -30,35 +30,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tween_simple_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="8Su-2j-dgR">
-                                <rect key="frame" x="134" y="20" width="107" height="28"/>
+                                <rect key="frame" x="153.66666666666666" y="20" width="106.99999999999997" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="107" id="Egg-hD-cFd"/>
-                                    <constraint firstAttribute="height" constant="28" id="uff-Hd-dWe"/>
+                                    <constraint firstAttribute="height" constant="35" id="beQ-fG-hTj"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-sh-8Oe">
-                                <rect key="frame" x="133" y="288.5" width="109" height="110"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-sh-8Oe">
+                                <rect key="frame" x="142" y="328.66666666666669" width="130" height="99"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGl-3t-21Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGl-3t-21Q" customClass="RoundedButton" customModule="tween_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="새로 사진 찍기">
                                             <color key="titleColor" red="0.27058823529999998" green="0.45882352939999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerWidth">
-                                                <integer key="value" value="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="openCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hdN-sV-Pc9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tA-hc-eCg">
-                                        <rect key="frame" x="0.0" y="80" width="109" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tA-hc-eCg" customClass="RoundedButton" customModule="tween_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="65" width="130" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="갤러리에서 고르기">
                                             <color key="titleColor" red="0.27058823529999998" green="0.45882352939999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -73,7 +66,6 @@
                         <constraints>
                             <constraint firstItem="vrt-sh-8Oe" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3f8-ES-WoO"/>
                             <constraint firstItem="WbB-8y-V6Q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L2g-k1-3GB"/>
-                            <constraint firstItem="vrt-sh-8Oe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="133" id="Oa9-JD-WlH"/>
                             <constraint firstItem="vrt-sh-8Oe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Qhs-ol-08u"/>
                             <constraint firstItem="8Su-2j-dgR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QkF-eA-wdW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="WbB-8y-V6Q" secondAttribute="centerY" constant="20" id="U23-pn-fSd"/>
