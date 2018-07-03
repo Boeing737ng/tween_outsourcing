@@ -1,3 +1,5 @@
 *.xcodeproj
 .DS_Store
+Info.plist
 *Info.plist
+./tween_ios/Info.plist
