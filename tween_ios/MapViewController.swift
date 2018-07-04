@@ -18,15 +18,23 @@ class MapViewController: UIViewController,MTMapViewDelegate {
         // Do any additional setup after loading the view.
     }
     
+//    override func viewDidAppear(_ animated: Bool) {
+//        let current = MTMapPointGeo()
+//        print(current.latitude)
+//        print(current.longitude)
+//    }
+    
+    // Called when the map loaded with current location
+    func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
+        print("latitude:\(location.mapPointGeo().latitude)")
+        print("latitude:\(location.mapPointGeo().longitude)")
+    }
     func openDaumMap() {
         mapView.delegate = self
         mapView.baseMapType = .standard
         mapView.showCurrentLocationMarker = true
         mapView.currentLocationTrackingMode = .onWithoutHeading
         self.view.addSubview(mapView)
-        let current = MTMapPointGeo()
-        print(current.latitude)
-        print(current.longitude)
     }
 
     override func didReceiveMemoryWarning() {
