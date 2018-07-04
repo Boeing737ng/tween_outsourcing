@@ -19,6 +19,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+
     @IBAction func kakaoTest(_ sender: Any) {
         // Location 타입 템플릿 오브젝트 생성
         let template = KMTFeedTemplate { (feedTemplateBuilder) in
@@ -85,8 +86,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("Image Selected")
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
-        print(mediaType)
         
         if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
             capturedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
@@ -95,6 +96,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
             }
         }
         self.dismiss(animated: true, completion: nil)
+        performSegue(withIdentifier: "daumMapView", sender: self)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
