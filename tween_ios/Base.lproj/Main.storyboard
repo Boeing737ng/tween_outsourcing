@@ -36,8 +36,8 @@
                                     <constraint firstAttribute="height" constant="35" id="beQ-fG-hTj"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-sh-8Oe">
-                                <rect key="frame" x="122.5" y="294" width="130" height="99"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="vrt-sh-8Oe">
+                                <rect key="frame" x="122.5" y="262.5" width="130" height="162"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGl-3t-21Q" customClass="RoundedButton" customModule="tween_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="34"/>
@@ -50,13 +50,20 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tA-hc-eCg" customClass="RoundedButton" customModule="tween_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="65" width="130" height="34"/>
+                                        <rect key="frame" x="0.0" y="66" width="130" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="갤러리에서 고르기">
                                             <color key="titleColor" red="0.27058823529999998" green="0.45882352939999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="chooseFromGallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y7J-Bm-lP4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3v-pb-Bgf">
+                                        <rect key="frame" x="0.0" y="132" width="130" height="30"/>
+                                        <state key="normal" title="contact"/>
+                                        <connections>
+                                            <action selector="kakaoTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ga8-8S-5kk"/>
                                         </connections>
                                     </button>
                                 </subviews>
