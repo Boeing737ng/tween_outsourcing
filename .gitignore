@@ -2,3 +2,4 @@
 .DS_Store
 *Info.plist
 *.framework
+*.embeddedframework
