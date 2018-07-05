@@ -6,7 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -96,16 +98,70 @@
                     <view key="view" contentMode="scaleToFill" id="QgY-Vu-F3F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ping.png" translatesAutoresizingMaskIntoConstraints="NO" id="P93-wK-UK5">
+                                <rect key="frame" x="172.5" y="313.5" width="30" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="5Id-hq-Ktj"/>
+                                    <constraint firstAttribute="height" constant="60" id="MEf-e9-nGM"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9w-3M-Po8">
+                                <rect key="frame" x="100" y="245.5" width="175" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Bcb-R0-Jwp">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2S-Yq-Rii">
+                                                <rect key="frame" x="0.0" y="0.0" width="175" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="KMr-AF-pMi"/>
+                                                </constraints>
+                                                <state key="normal" title="이 위치 보내기"/>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대전광역시 서구 아하하하" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vW-rP-koE">
+                                                <rect key="frame" x="0.0" y="35" width="175" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="FjB-c3-AlM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.44159133760000002" green="0.44159133760000002" blue="0.44159133760000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aGe-NL-0Tg"/>
+                                    <constraint firstAttribute="width" constant="175" id="c7U-F5-6CB"/>
+                                    <constraint firstItem="Bcb-R0-Jwp" firstAttribute="width" secondItem="g9w-3M-Po8" secondAttribute="width" id="cLI-gu-uBe"/>
+                                    <constraint firstItem="Bcb-R0-Jwp" firstAttribute="centerY" secondItem="g9w-3M-Po8" secondAttribute="centerY" id="eLM-zS-8UT"/>
+                                    <constraint firstItem="Bcb-R0-Jwp" firstAttribute="height" secondItem="g9w-3M-Po8" secondAttribute="height" id="eeY-Rf-c5c"/>
+                                    <constraint firstItem="Bcb-R0-Jwp" firstAttribute="centerX" secondItem="g9w-3M-Po8" secondAttribute="centerX" id="f6Y-tz-BaJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="P93-wK-UK5" firstAttribute="firstBaseline" secondItem="g9w-3M-Po8" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="22i-HJ-F8I"/>
+                            <constraint firstItem="P93-wK-UK5" firstAttribute="centerX" secondItem="G7X-0v-sTT" secondAttribute="centerX" id="Mjy-En-Caw"/>
+                            <constraint firstItem="P93-wK-UK5" firstAttribute="centerY" secondItem="G7X-0v-sTT" secondAttribute="centerY" id="m2B-ZU-u26"/>
+                            <constraint firstItem="g9w-3M-Po8" firstAttribute="centerX" secondItem="G7X-0v-sTT" secondAttribute="centerX" id="nof-jT-ggV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="G7X-0v-sTT"/>
                     </view>
+                    <connections>
+                        <outlet property="mapButtonView" destination="g9w-3M-Po8" id="G93-kc-HJr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIP-ic-Dn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="132"/>
+            <point key="canvasLocation" x="853.60000000000002" y="131.78410794602701"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ping.png" width="213" height="426"/>
         <image name="tween_simple_logo.png" width="900" height="286"/>
     </resources>
 </document>
