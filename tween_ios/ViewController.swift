@@ -19,7 +19,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
     @IBAction func kakaoTest(_ sender: Any) {
         // Location 타입 템플릿 오브젝트 생성
         let template = KMTFeedTemplate { (feedTemplateBuilder) in
@@ -33,7 +32,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
                     linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
                 })
             })
-            
             // 버튼
             feedTemplateBuilder.addButton(KMTButtonObject(builderBlock: { (buttonBuilder) in
                 buttonBuilder.title = "웹으로"
@@ -49,16 +47,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
                 })
             }))
         }
-        
         // 카카오링크 실행
         KLKTalkLinkCenter.shared().sendDefault(with: template, success: { (warningMsg, argumentMsg) in
-            
             // 성공
             print("warning message: \(String(describing: warningMsg))")
             print("argument message: \(String(describing: argumentMsg))")
             
         }, failure: { (error) in
-            
             // 실패
             //UIAlertController.showMessage(error.localizedDescription)
             print("error \(error)")
@@ -88,7 +83,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("Image Selected")
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
-        
         if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
             capturedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
             if isTakenFromCamera {
@@ -106,7 +100,4 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
