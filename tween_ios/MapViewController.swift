@@ -12,9 +12,15 @@ class MapViewController: UIViewController,MTMapViewDelegate {
     
     lazy var mapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 
+    @IBOutlet var mapButtonView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         openDaumMap()
+        mapButtonView.layer.cornerRadius = 7
+        mapButtonView.layer.shadowColor = UIColor.gray.cgColor
+        mapButtonView.layer.shadowOpacity = 1
+        mapButtonView.layer.shadowOffset = CGSize.zero
+        mapButtonView.layer.shadowRadius = 7
         // Do any additional setup after loading the view.
     }
     
@@ -29,12 +35,14 @@ class MapViewController: UIViewController,MTMapViewDelegate {
         print("latitude:\(location.mapPointGeo().latitude)")
         print("latitude:\(location.mapPointGeo().longitude)")
     }
+    
     func openDaumMap() {
         mapView.delegate = self
         mapView.baseMapType = .standard
         mapView.showCurrentLocationMarker = true
         mapView.currentLocationTrackingMode = .onWithoutHeading
-        self.view.addSubview(mapView)
+        //self.view.addSubview(mapView)
+        self.view.insertSubview(mapView, at: 0)
     }
 
     override func didReceiveMemoryWarning() {
