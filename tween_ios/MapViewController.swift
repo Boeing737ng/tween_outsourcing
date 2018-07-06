@@ -13,6 +13,7 @@ class MapViewController: UIViewController,MTMapViewDelegate {
     lazy var mapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
 
     @IBOutlet var mapButtonView: UIView!
+    @IBOutlet var locationText: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         openDaumMap()
@@ -24,7 +25,11 @@ class MapViewController: UIViewController,MTMapViewDelegate {
         // Do any additional setup after loading the view.
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
+    @IBAction func onSelectLocation(_ sender: Any) {
+        print(mapView.mapCenterPoint.mapPointGeo().latitude)
+        print(mapView.mapCenterPoint.mapPointGeo().longitude)
+    }
+    //    override func viewDidAppear(_ animated: Bool) {
 //        let current = MTMapPointGeo()
 //        print(current.latitude)
 //        print(current.longitude)

@@ -118,6 +118,9 @@
                                                     <constraint firstAttribute="height" constant="35" id="KMr-AF-pMi"/>
                                                 </constraints>
                                                 <state key="normal" title="이 위치 보내기"/>
+                                                <connections>
+                                                    <action selector="onSelectLocation:" destination="Y52-fd-y2c" eventType="touchUpInside" id="cmY-Z6-1T5"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대전광역시 서구 아하하하" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vW-rP-koE">
                                                 <rect key="frame" x="0.0" y="35" width="175" height="25"/>
@@ -152,6 +155,7 @@
                         <viewLayoutGuide key="safeArea" id="G7X-0v-sTT"/>
                     </view>
                     <connections>
+                        <outlet property="locationText" destination="3vW-rP-koE" id="vZF-aV-DlS"/>
                         <outlet property="mapButtonView" destination="g9w-3M-Po8" id="G93-kc-HJr"/>
                     </connections>
                 </viewController>
