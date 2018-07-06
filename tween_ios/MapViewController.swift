@@ -28,7 +28,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     @IBAction func onSelectLocation(_ sender: Any) {
         
     }
-    
+    // Create and display Daum map
     func openDaumMap() {
         mapView.delegate = self
         mapView.baseMapType = .standard
@@ -37,7 +37,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         //self.view.addSubview(mapView)
         self.view.insertSubview(mapView, at: 0)
     }
-    
+    // Apply the style of button container on the map
     func addButtonContainerStyle() {
         mapButtonView.layer.cornerRadius = 7
         mapButtonView.layer.shadowColor = UIColor.gray.cgColor
@@ -45,7 +45,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         mapButtonView.layer.shadowOffset = CGSize.zero
         mapButtonView.layer.shadowRadius = 7
     }
-    
+    // Gets the actual string address by coordinate of center point
     func getStringAddress(){
        
         let centerLatitude = mapView.mapCenterPoint.mapPointGeo().latitude
@@ -93,7 +93,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         print("latitude:\(location.mapPointGeo().latitude)")
         print("latitude:\(location.mapPointGeo().longitude)")
     }
-    
+    // Called when the movement of map is finished
     func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
         getStringAddress()
     }
