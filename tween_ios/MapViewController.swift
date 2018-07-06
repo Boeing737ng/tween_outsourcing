@@ -31,11 +31,13 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     }
     
     @IBAction func onSelectLocation(_ sender: Any) {
+        
+    }
+    func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
         getStringAddress()
     }
     
     func getMapCenterPoint() {
-        locationText.text = fullStringAddress
 //        var map = mapView.mapCenterPoint.mapPointGeo()
 //        var mapPoint: MTMapPoint = MTMapPoint(geoCoord: mapView.mapCenterPoint.mapPointGeo())
 //        var mapPointObject:MTMapPoint
@@ -49,7 +51,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     }
     
     func getStringAddress(){
-        
+       
         let centerLatitude = mapView.mapCenterPoint.mapPointGeo().latitude
         let centerLongitude = mapView.mapCenterPoint.mapPointGeo().longitude
         
@@ -88,6 +90,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             //self.fullStringAddress = city! + " " + borough! + " " + dong! + " " + areaNumber!
             print(self.fullStringAddress)
             self.getMapCenterPoint()
+            self.locationText.text = self.fullStringAddress
             self.fullStringAddress = ""
         })
     }
