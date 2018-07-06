@@ -12,13 +12,11 @@ import CoreLocation
 class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoderDelegate {
     
     lazy var mapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
-//    var centerLatitude = 0.0
-//    var centerLongitude = 0.0
-//    let apiKey = "abba0540e14612ad261541cfcca3f121"
     var fullStringAddress: String = ""
 
     @IBOutlet var mapButtonView: UIView!
     @IBOutlet var locationText: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         openDaumMap()
@@ -34,7 +32,6 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         mapView.baseMapType = .standard
         mapView.showCurrentLocationMarker = true
         mapView.currentLocationTrackingMode = .onWithoutHeading
-        //self.view.addSubview(mapView)
         self.view.insertSubview(mapView, at: 0)
     }
     // Apply the style of button container on the map
@@ -81,7 +78,6 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             } else {
                 print("Could not find areaNumber")
             }
-            //self.fullStringAddress = city! + " " + borough! + " " + dong! + " " + areaNumber!
             print(self.fullStringAddress)
             self.locationText.text = self.fullStringAddress
             self.fullStringAddress = ""
