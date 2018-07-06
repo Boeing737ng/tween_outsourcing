@@ -22,45 +22,39 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     override func viewDidLoad() {
         super.viewDidLoad()
         openDaumMap()
-        mapButtonView.layer.cornerRadius = 7
-        mapButtonView.layer.shadowColor = UIColor.gray.cgColor
-        mapButtonView.layer.shadowOpacity = 1
-        mapButtonView.layer.shadowOffset = CGSize.zero
-        mapButtonView.layer.shadowRadius = 7
-        // Do any additional setup after loading the view.
+        addButtonContainerStyle()
     }
     
     @IBAction func onSelectLocation(_ sender: Any) {
         
     }
-    func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
-        getStringAddress()
+    
+    func openDaumMap() {
+        mapView.delegate = self
+        mapView.baseMapType = .standard
+        mapView.showCurrentLocationMarker = true
+        mapView.currentLocationTrackingMode = .onWithoutHeading
+        //self.view.addSubview(mapView)
+        self.view.insertSubview(mapView, at: 0)
     }
     
-    func getMapCenterPoint() {
-//        var map = mapView.mapCenterPoint.mapPointGeo()
-//        var mapPoint: MTMapPoint = MTMapPoint(geoCoord: mapView.mapCenterPoint.mapPointGeo())
-//        var mapPointObject:MTMapPoint
-//        mapPointObject = mapView.mapCenterPoint
-//        print(mapView.mapCenterPoint)
-//        print("--------------------")
-//        print(mapPointObject)
-//        print("--------------------")
-//        var geoCoder = MTMapReverseGeoCoder(mapPoint: mapView.mapCenterPoint, with: self, withOpenAPIKey: apiKey)
-//        geoCoder!.startFindingAddress()
+    func addButtonContainerStyle() {
+        mapButtonView.layer.cornerRadius = 7
+        mapButtonView.layer.shadowColor = UIColor.gray.cgColor
+        mapButtonView.layer.shadowOpacity = 1
+        mapButtonView.layer.shadowOffset = CGSize.zero
+        mapButtonView.layer.shadowRadius = 7
     }
     
     func getStringAddress(){
        
         let centerLatitude = mapView.mapCenterPoint.mapPointGeo().latitude
         let centerLongitude = mapView.mapCenterPoint.mapPointGeo().longitude
-        
         let findLocation = CLLocation(latitude: centerLatitude, longitude: centerLongitude)
         let geocoder = CLGeocoder()
         let locale = Locale(identifier: "Ko-kr")
         
         geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
-            
             if let city = placemarks?[0].administrativeArea {
                 print(city)
                 self.fullStringAddress.append(city + " ")
@@ -89,7 +83,6 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             }
             //self.fullStringAddress = city! + " " + borough! + " " + dong! + " " + areaNumber!
             print(self.fullStringAddress)
-            self.getMapCenterPoint()
             self.locationText.text = self.fullStringAddress
             self.fullStringAddress = ""
         })
@@ -101,13 +94,8 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         print("latitude:\(location.mapPointGeo().longitude)")
     }
     
-    func openDaumMap() {
-        mapView.delegate = self
-        mapView.baseMapType = .standard
-        mapView.showCurrentLocationMarker = true
-        mapView.currentLocationTrackingMode = .onWithoutHeading
-        //self.view.addSubview(mapView)
-        self.view.insertSubview(mapView, at: 0)
+    func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
+        getStringAddress()
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,7 +103,6 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
