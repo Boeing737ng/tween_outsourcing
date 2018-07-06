@@ -20,5 +20,6 @@
 #import <KakaoLink/KakaoLink.h>
 #import <KakaoMessageTemplate/KakaoMessageTemplate.h>
 #import "DaumMap/MTMapView.h"
+#import "DaumMap/MTMapReverseGeoCoder.h"
 
 #endif
