@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MapViewController: UIViewController,MTMapViewDelegate {
+class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoderDelegate {
     
     lazy var mapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
+//    var centerLatitude = 0.0
+//    var centerLongitude = 0.0
+//    let apiKey = "abba0540e14612ad261541cfcca3f121"
+    var fullStringAddress: String = ""
 
     @IBOutlet var mapButtonView: UIView!
     @IBOutlet var locationText: UILabel!
@@ -26,14 +31,66 @@ class MapViewController: UIViewController,MTMapViewDelegate {
     }
     
     @IBAction func onSelectLocation(_ sender: Any) {
-        print(mapView.mapCenterPoint.mapPointGeo().latitude)
-        print(mapView.mapCenterPoint.mapPointGeo().longitude)
+        getStringAddress()
     }
-    //    override func viewDidAppear(_ animated: Bool) {
-//        let current = MTMapPointGeo()
-//        print(current.latitude)
-//        print(current.longitude)
-//    }
+    
+    func getMapCenterPoint() {
+        locationText.text = fullStringAddress
+//        var map = mapView.mapCenterPoint.mapPointGeo()
+//        var mapPoint: MTMapPoint = MTMapPoint(geoCoord: mapView.mapCenterPoint.mapPointGeo())
+//        var mapPointObject:MTMapPoint
+//        mapPointObject = mapView.mapCenterPoint
+//        print(mapView.mapCenterPoint)
+//        print("--------------------")
+//        print(mapPointObject)
+//        print("--------------------")
+//        var geoCoder = MTMapReverseGeoCoder(mapPoint: mapView.mapCenterPoint, with: self, withOpenAPIKey: apiKey)
+//        geoCoder!.startFindingAddress()
+    }
+    
+    func getStringAddress(){
+        
+        let centerLatitude = mapView.mapCenterPoint.mapPointGeo().latitude
+        let centerLongitude = mapView.mapCenterPoint.mapPointGeo().longitude
+        
+        let findLocation = CLLocation(latitude: centerLatitude, longitude: centerLongitude)
+        let geocoder = CLGeocoder()
+        let locale = Locale(identifier: "Ko-kr")
+        
+        geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
+            
+            if let city = placemarks?[0].administrativeArea {
+                print(city)
+                self.fullStringAddress.append(city + " ")
+            } else {
+                print("Could not find city")
+            }
+            if let borough = placemarks?[0].locality {
+                if borough != "세종특별자치시" {
+                    print(borough)
+                    self.fullStringAddress.append(borough + " ")
+                }
+            } else {
+                print("Could not find borough")
+            }
+            if let dong = placemarks?[0].thoroughfare {
+                print(dong)
+                self.fullStringAddress.append(dong + " ")
+            } else {
+                print("Could not find dong")
+            }
+            if let areaNumber = placemarks?[0].subThoroughfare {
+                print(areaNumber)
+                self.fullStringAddress.append(areaNumber + " ")
+            } else {
+                print("Could not find areaNumber")
+            }
+            //self.fullStringAddress = city! + " " + borough! + " " + dong! + " " + areaNumber!
+            print(self.fullStringAddress)
+            self.getMapCenterPoint()
+            self.fullStringAddress = ""
+        })
+    }
     
     // Called when the map loaded with current location
     func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
