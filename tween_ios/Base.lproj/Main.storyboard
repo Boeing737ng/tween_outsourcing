@@ -64,9 +64,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3v-pb-Bgf">
                                         <rect key="frame" x="0.0" y="132" width="130" height="30"/>
                                         <state key="normal" title="contact"/>
-                                        <connections>
-                                            <action selector="kakaoTest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ga8-8S-5kk"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

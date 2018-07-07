@@ -84,6 +84,48 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         })
     }
     
+    func sendKakaoLink() {
+        // Location 타입 템플릿 오브젝트 생성
+        let template = KMTFeedTemplate { (feedTemplateBuilder) in
+            
+            // 컨텐츠
+            feedTemplateBuilder.content = KMTContentObject(builderBlock: { (contentBuilder) in
+                contentBuilder.title = "좀 되라"
+                contentBuilder.desc = "#케익"
+                contentBuilder.imageURL = URL(string: "http://mud-kage.kakao.co.kr/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png")!
+                contentBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
+                    linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
+                })
+            })
+            // 버튼
+            feedTemplateBuilder.addButton(KMTButtonObject(builderBlock: { (buttonBuilder) in
+                buttonBuilder.title = "웹으로"
+                buttonBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
+                    linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
+                })
+            }))
+            feedTemplateBuilder.addButton(KMTButtonObject(builderBlock: { (buttonBuilder) in
+                buttonBuilder.title = "앱으로"
+                buttonBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
+                    linkBuilder.iosExecutionParams = "param1=value1&param2=value2"
+                    linkBuilder.androidExecutionParams = "param1=value1&param2=value2"
+                })
+            }))
+        }
+        // 카카오링크 실행
+        KLKTalkLinkCenter.shared().sendDefault(with: template, success: { (warningMsg, argumentMsg) in
+            // 성공
+            print("warning message: \(String(describing: warningMsg))")
+            print("argument message: \(String(describing: argumentMsg))")
+            
+        }, failure: { (error) in
+            // 실패
+            //UIAlertController.showMessage(error.localizedDescription)
+            print("error \(error)")
+            
+        })
+    }
+    
     // Called when the map loaded with current location
     func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
         print("latitude:\(location.mapPointGeo().latitude)")
