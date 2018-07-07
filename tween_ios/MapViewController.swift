@@ -13,6 +13,9 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     
     lazy var mapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
     var fullStringAddress: String = ""
+    var tempFullStringAddress: String = ""
+    var latitude = 0.0
+    var longitude = 0.0
 
     @IBOutlet var mapButtonView: UIView!
     @IBOutlet var locationText: UILabel!
@@ -24,7 +27,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     }
     
     @IBAction func onSelectLocation(_ sender: Any) {
-        
+        self.sendKakaoLink()
     }
     // Create and display Daum map
     func openDaumMap() {
@@ -54,44 +57,46 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
             if let city = placemarks?[0].administrativeArea {
                 print(city)
-                self.fullStringAddress.append(city + " ")
+                self.tempFullStringAddress.append(city + " ")
             } else {
                 print("Could not find city")
             }
             if let borough = placemarks?[0].locality {
                 if borough != "세종특별자치시" {
                     print(borough)
-                    self.fullStringAddress.append(borough + " ")
+                    self.tempFullStringAddress.append(borough + " ")
                 }
             } else {
                 print("Could not find borough")
             }
             if let dong = placemarks?[0].thoroughfare {
                 print(dong)
-                self.fullStringAddress.append(dong + " ")
+                self.tempFullStringAddress.append(dong + " ")
             } else {
                 print("Could not find dong")
             }
             if let areaNumber = placemarks?[0].subThoroughfare {
                 print(areaNumber)
-                self.fullStringAddress.append(areaNumber + " ")
+                self.tempFullStringAddress.append(areaNumber + " ")
             } else {
                 print("Could not find areaNumber")
             }
-            print(self.fullStringAddress)
+            self.latitude = centerLatitude
+            self.longitude = centerLongitude
             self.locationText.text = self.fullStringAddress
-            self.fullStringAddress = ""
+            self.fullStringAddress = self.tempFullStringAddress
+            self.tempFullStringAddress = ""
         })
     }
     
     func sendKakaoLink() {
         // Location 타입 템플릿 오브젝트 생성
         let template = KMTFeedTemplate { (feedTemplateBuilder) in
-            
+             
             // 컨텐츠
             feedTemplateBuilder.content = KMTContentObject(builderBlock: { (contentBuilder) in
-                contentBuilder.title = "좀 되라"
-                contentBuilder.desc = "#케익"
+                contentBuilder.title = self.fullStringAddress
+                //contentBuilder.desc = fullStringAddress
                 contentBuilder.imageURL = URL(string: "http://mud-kage.kakao.co.kr/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png")!
                 contentBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
                     linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
@@ -99,16 +104,19 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             })
             // 버튼
             feedTemplateBuilder.addButton(KMTButtonObject(builderBlock: { (buttonBuilder) in
-                buttonBuilder.title = "웹으로"
+                buttonBuilder.title = "웹지도 보기"
                 buttonBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-                    linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
+                    linkBuilder.webURL = URL(string: "http://map.daum.net/look?p=\(self.latitude),\(self.longitude)")
+                    linkBuilder.mobileWebURL = URL(string: "http://map.daum.net/look?p=\(self.latitude),\(self.longitude)")
                 })
             }))
             feedTemplateBuilder.addButton(KMTButtonObject(builderBlock: { (buttonBuilder) in
-                buttonBuilder.title = "앱으로"
+                buttonBuilder.title = "앱지도 보기"
                 buttonBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-                    linkBuilder.iosExecutionParams = "param1=value1&param2=value2"
-                    linkBuilder.androidExecutionParams = "param1=value1&param2=value2"
+//                    linkBuilder.iosExecutionParams = "param1=value1&param2=value2"
+//                    linkBuilder.androidExecutionParams = "param1=value1&param2=value2"
+                    linkBuilder.webURL = URL(string: "http://m.map.daum.net/look?p=\(self.latitude),\(self.longitude)")
+                    linkBuilder.mobileWebURL = URL(string: "http://m.map.daum.net/look?p=\(self.latitude),\(self.longitude)")
                 })
             }))
         }
