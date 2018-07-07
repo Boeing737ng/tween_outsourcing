@@ -56,27 +56,23 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         
         geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
             if let city = placemarks?[0].administrativeArea {
-                print(city)
                 self.tempFullStringAddress.append(city + " ")
             } else {
                 print("Could not find city")
             }
             if let borough = placemarks?[0].locality {
                 if borough != "세종특별자치시" {
-                    print(borough)
                     self.tempFullStringAddress.append(borough + " ")
                 }
             } else {
                 print("Could not find borough")
             }
             if let dong = placemarks?[0].thoroughfare {
-                print(dong)
                 self.tempFullStringAddress.append(dong + " ")
             } else {
                 print("Could not find dong")
             }
             if let areaNumber = placemarks?[0].subThoroughfare {
-                print(areaNumber)
                 self.tempFullStringAddress.append(areaNumber + " ")
             } else {
                 print("Could not find areaNumber")
@@ -85,6 +81,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             self.longitude = centerLongitude
             self.locationText.text = self.fullStringAddress
             self.fullStringAddress = self.tempFullStringAddress
+            print(self.fullStringAddress)
             self.tempFullStringAddress = ""
         })
     }
