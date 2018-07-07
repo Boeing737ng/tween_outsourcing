@@ -92,7 +92,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     func sendKakaoLink() {
         // Location 타입 템플릿 오브젝트 생성
         let template = KMTFeedTemplate { (feedTemplateBuilder) in
-             
+            
             // 컨텐츠
             feedTemplateBuilder.content = KMTContentObject(builderBlock: { (contentBuilder) in
                 contentBuilder.title = self.fullStringAddress
@@ -136,8 +136,8 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     
     // Called when the map loaded with current location
     func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
-        print("latitude:\(location.mapPointGeo().latitude)")
-        print("latitude:\(location.mapPointGeo().longitude)")
+        print("Current latitude:\(location.mapPointGeo().latitude)")
+        print("Current longitude:\(location.mapPointGeo().longitude)")
     }
     // Called when the movement of map is finished
     func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
