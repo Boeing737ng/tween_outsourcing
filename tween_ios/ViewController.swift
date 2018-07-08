@@ -44,9 +44,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
         if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
             capturedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            if isTakenFromCamera {
-                UIImageWriteToSavedPhotosAlbum(capturedImage, self, nil, nil)
-            }
+//            // Saves the taken picture to photo album
+//            if isTakenFromCamera {
+//                UIImageWriteToSavedPhotosAlbum(capturedImage, self, nil, nil)
+//            }
         }
         self.dismiss(animated: true, completion: nil)
         performSegue(withIdentifier: "daumMapView", sender: self)
