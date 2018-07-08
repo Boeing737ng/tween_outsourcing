@@ -38,7 +38,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
             present(pickerController, animated: true, completion: nil)
         }
     }
-    
+    // Called when image is taken by camera or is selected from device's gallery
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         print("Image Selected")
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
@@ -50,12 +50,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
 //            }
         }
         self.dismiss(animated: true, completion: nil)
+        // Open Daum map view storyboard
         performSegue(withIdentifier: "daumMapView", sender: self)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
