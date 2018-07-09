@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import Firebase
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
     
@@ -43,7 +44,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         print("Image Selected")
         let mediaType = info[UIImagePickerControllerMediaType] as! NSString
         if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
-            capturedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+            if let capturedImage = info[UIImagePickerControllerOriginalImage] as? UIImage,
+                let imageData = UIImageJPEGRepresentation(capturedImage, 0.8) {
+                uploadToFirebaseStorage(data: imageData)
+            }
 //            // Saves the taken picture to photo album
 //            if isTakenFromCamera {
 //                UIImageWriteToSavedPhotosAlbum(capturedImage, self, nil, nil)
@@ -52,6 +56,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         self.dismiss(animated: true, completion: nil)
         // Open Daum map view storyboard
         performSegue(withIdentifier: "daumMapView", sender: self)
+    }
+    
+    func uploadToFirebaseStorage(data: Data) {
+        //gs://tween-1413d.appspot.com
+        let timestamp = Int((Date().timeIntervalSince1970 * 1000).rounded())
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let mountainRef = storageRef.child("\(timestamp).jpg")
+        let uploadMetadata = StorageMetadata()
+        uploadMetadata.contentType = "image/jpeg"
+        mountainRef.putData(data, metadata: uploadMetadata) { (metadata, error) in
+            if error != nil {
+                print("ERROR!!: \(error!.localizedDescription)")
+            }
+            else {
+                print("Upload completed!! \(timestamp).jpg")
+            }
+        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
