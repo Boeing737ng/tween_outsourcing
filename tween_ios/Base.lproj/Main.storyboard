@@ -67,13 +67,21 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@ 2018 TWEEN. ALL RIGHTS RESERVED." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0l-Eg-gL0">
+                                <rect key="frame" x="71.5" y="642.5" width="232.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.45882352939999999" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vrt-sh-8Oe" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="3f8-ES-WoO"/>
+                            <constraint firstItem="k0l-Eg-gL0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Dge-zo-gT7"/>
                             <constraint firstItem="WbB-8y-V6Q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L2g-k1-3GB"/>
                             <constraint firstItem="vrt-sh-8Oe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Qhs-ol-08u"/>
                             <constraint firstItem="8Su-2j-dgR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="QkF-eA-wdW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k0l-Eg-gL0" secondAttribute="bottom" constant="10" id="RiP-6V-Taf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="WbB-8y-V6Q" secondAttribute="centerY" constant="20" id="U23-pn-fSd"/>
                             <constraint firstItem="WbB-8y-V6Q" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Zvp-gf-ZR2"/>
                             <constraint firstItem="8Su-2j-dgR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="m9X-Mw-bGr"/>
