@@ -16,6 +16,8 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     var tempFullStringAddress: String = ""
     var latitude = 0.0
     var longitude = 0.0
+    var timestamp: Int = 0
+    var downloadURL: String = ""
 
     @IBOutlet var mapButtonView: UIView!
     @IBOutlet var locationText: UILabel!
@@ -94,9 +96,9 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             feedTemplateBuilder.content = KMTContentObject(builderBlock: { (contentBuilder) in
                 contentBuilder.title = self.fullStringAddress
                 //contentBuilder.desc = fullStringAddress
-                contentBuilder.imageURL = URL(string: "http://mud-kage.kakao.co.kr/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png")!
+                contentBuilder.imageURL = URL(string: self.downloadURL)!
                 contentBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-                    linkBuilder.mobileWebURL = URL(string: "https://developers.kakao.com")
+                    linkBuilder.mobileWebURL = URL(string: self.downloadURL)
                 })
             })
             // 버튼

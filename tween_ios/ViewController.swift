@@ -14,10 +14,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     var capturedImage: UIImage!
     var isTakenFromCamera = false
+    var timestamp: Int!
+    var downloadURL: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let mapView = segue.destination as! MapViewController
+        mapView.timestamp = timestamp
+        mapView.downloadURL = downloadURL
     }
 
     @IBAction func openCamera(_ sender: Any) {
@@ -54,26 +62,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
 //            }
         }
         self.dismiss(animated: true, completion: nil)
-        // Open Daum map view storyboard
-        performSegue(withIdentifier: "daumMapView", sender: self)
     }
     
     func uploadToFirebaseStorage(data: Data) {
         //gs://tween-1413d.appspot.com
-        let timestamp = Int((Date().timeIntervalSince1970 * 1000).rounded())
+        timestamp = Int((Date().timeIntervalSince1970 * 1000).rounded())
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        let mountainRef = storageRef.child("\(timestamp).jpg")
+        let mountainRef = storageRef.child("\(timestamp!).jpg")
         let uploadMetadata = StorageMetadata()
         uploadMetadata.contentType = "image/jpeg"
         mountainRef.putData(data, metadata: uploadMetadata) { (metadata, error) in
+            mountainRef.downloadURL(completion: { (url, urlError) in
+                self.downloadURL = "\(url!)"
+                // Open Daum map view storyboard
+                self.performSegue(withIdentifier: "daumMapView", sender: self)
+            })
             if error != nil {
-                print("ERROR!!: \(error!.localizedDescription)")
-            }
-            else {
-                print("Upload completed!! \(timestamp).jpg")
+                print("error")
             }
         }
+        
+//        mountainRef.putData(data, metadata: uploadMetadata) { (metadata, error) in
+//            if error != nil {
+//                print("ERROR!!: \(error!.localizedDescription)")
+//            }
+//            else {
+//                print("Upload completed!! \(self.timestamp).jpg")
+//            }
+//        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
