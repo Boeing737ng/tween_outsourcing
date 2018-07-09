@@ -132,12 +132,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             
         })
     }
-    
-    // Called when the map loaded with current location
-    func mapView(_ mapView: MTMapView!, updateCurrentLocation location: MTMapPoint!, withAccuracy accuracy: MTMapLocationAccuracy) {
-        print("Current latitude:\(location.mapPointGeo().latitude)")
-        print("Current longitude:\(location.mapPointGeo().longitude)")
-    }
+
     // Called when the movement of map is finished
     func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
         getStringAddress()
