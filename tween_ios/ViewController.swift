@@ -14,8 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     var capturedImage: UIImage!
     var isTakenFromCamera = false
-    var timestamp: Int!
-    var downloadURL: String!
+    var timestamp: Int = 0
+    var downloadURL: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         timestamp = Int((Date().timeIntervalSince1970 * 1000).rounded())
         let storage = Storage.storage()
         let storageRef = storage.reference()
-        let mountainRef = storageRef.child("\(timestamp!).jpg")
+        let mountainRef = storageRef.child("\(timestamp).jpg")
         let uploadMetadata = StorageMetadata()
         uploadMetadata.contentType = "image/jpeg"
         mountainRef.putData(data, metadata: uploadMetadata) { (metadata, error) in
