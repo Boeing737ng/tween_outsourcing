@@ -65,7 +65,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
     
     func uploadToFirebaseStorage(data: Data) {
-        //gs://tween-1413d.appspot.com
         timestamp = Int((Date().timeIntervalSince1970 * 1000).rounded())
         let storage = Storage.storage()
         let storageRef = storage.reference()
@@ -82,15 +81,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
                 print("error")
             }
         }
-        
-//        mountainRef.putData(data, metadata: uploadMetadata) { (metadata, error) in
-//            if error != nil {
-//                print("ERROR!!: \(error!.localizedDescription)")
-//            }
-//            else {
-//                print("Upload completed!! \(self.timestamp).jpg")
-//            }
-//        }
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
