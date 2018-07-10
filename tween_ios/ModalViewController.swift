@@ -24,6 +24,15 @@ class ModalViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func sendKakaoLink(_ sender: Any) {
+        let mapView = MapViewController()
+        mapView.sendKakaoLink()
+    }
+    
+    @IBAction func sendTween(_ sender: Any) {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

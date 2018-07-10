@@ -191,7 +191,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="sendKakaoLink:" destination="Mdk-uF-FJa" eventType="touchUpInside" id="Cze-yq-S9m"/>
+                                            <action selector="sendKakaoLink:" destination="Mdk-uF-FJa" eventType="touchUpInside" id="Trb-ew-dWE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS7-5f-zUe">
@@ -205,6 +205,9 @@
                                         <state key="normal" title="호  출">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendTween:" destination="Mdk-uF-FJa" eventType="touchUpInside" id="9ym-Xj-eCo"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP3-b9-gL2">
                                         <rect key="frame" x="0.0" y="43" width="240" height="0.0"/>
