@@ -124,8 +124,7 @@
                                                 </constraints>
                                                 <state key="normal" title="이 위치 보내기"/>
                                                 <connections>
-                                                    <action selector="onSelectLocation:" destination="Y52-fd-y2c" eventType="touchUpInside" id="cmY-Z6-1T5"/>
-                                                    <segue destination="Mdk-uF-FJa" kind="presentation" id="kbR-q3-Fnq"/>
+                                                    <segue destination="Mdk-uF-FJa" kind="presentation" modalPresentationStyle="overCurrentContext" id="b4M-xQ-PGc"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대전광역시 서구 아하하하" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vW-rP-koE">
@@ -169,10 +168,10 @@
             </objects>
             <point key="canvasLocation" x="853.60000000000002" y="131.78410794602701"/>
         </scene>
-        <!--View Controller-->
+        <!--Modal View Controller-->
         <scene sceneID="sEs-RD-b03">
             <objects>
-                <viewController id="Mdk-uF-FJa" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="Mdk-uF-FJa" customClass="ModalViewController" customModule="tween_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RnI-oV-Uk9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -191,6 +190,9 @@
                                         <state key="normal" title="전  달">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendKakaoLink:" destination="Mdk-uF-FJa" eventType="touchUpInside" id="Cze-yq-S9m"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS7-5f-zUe">
                                         <rect key="frame" x="122" y="72" width="110" height="40"/>
@@ -225,7 +227,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.39610980308219179" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="WMR-5Y-Kku" firstAttribute="centerY" secondItem="kSE-y3-q74" secondAttribute="centerY" id="Q0A-Hr-30B"/>
                             <constraint firstItem="OP3-b9-gL2" firstAttribute="centerX" secondItem="kSE-y3-q74" secondAttribute="centerX" id="afh-SA-0S9"/>

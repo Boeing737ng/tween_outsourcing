@@ -27,10 +27,6 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         openDaumMap()
         addButtonContainerStyle()
     }
-    
-    @IBAction func onSelectLocation(_ sender: Any) {
-        self.sendKakaoLink()
-    }
     // Create and display Daum map
     func openDaumMap() {
         mapView.delegate = self
