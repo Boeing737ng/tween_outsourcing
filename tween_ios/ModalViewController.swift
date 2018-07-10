@@ -10,12 +10,20 @@ import UIKit
 
 class ModalViewController: UIViewController {
 
+    @IBOutlet var addressText: UILabel!
+    
+    var stringAddress: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addressText.text = stringAddress
         // Do any additional setup after loading the view.
     }
-
+    
+    @IBAction func closeModal(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

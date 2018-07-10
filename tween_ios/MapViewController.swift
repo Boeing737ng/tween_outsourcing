@@ -43,6 +43,11 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         mapButtonView.layer.shadowOffset = CGSize.zero
         mapButtonView.layer.shadowRadius = 7
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let modalView = segue.destination as! ModalViewController
+        modalView.stringAddress = locationText.text!
+    }
     // Gets the actual string address by coordinate of center point
     func getStringAddress(){
        
