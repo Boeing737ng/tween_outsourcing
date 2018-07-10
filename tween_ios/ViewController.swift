@@ -52,8 +52,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let mapView = segue.destination as! MapViewController
-        mapView.timestamp = timestamp
         MapViewController.downloadURL = downloadURL
     }
 
