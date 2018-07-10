@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 
 class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoderDelegate {
     
@@ -131,6 +132,12 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             print("error \(error)")
             
         })
+    }
+    
+    func sendTweenCall() {
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        ref.childByAutoId().setValue(["Location": MapViewController.fullStringAddress])
     }
 
     // Called when the movement of map is finished

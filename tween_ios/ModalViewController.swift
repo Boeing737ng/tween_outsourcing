@@ -14,6 +14,7 @@ class ModalViewController: UIViewController {
     
     var stringAddress: String = ""
     var tempDownloadURL: String = ""
+    let mapView = MapViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,10 @@ class ModalViewController: UIViewController {
     }
     
     @IBAction func sendKakao(_ sender: Any) {
-        let mapView = MapViewController()
         mapView.sendKakaoLink()
     }
     @IBAction func sendTween(_ sender: Any) {
-        
+        mapView.sendTweenCall()
     }
     
     override func didReceiveMemoryWarning() {
