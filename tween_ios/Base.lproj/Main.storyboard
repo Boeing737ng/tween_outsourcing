@@ -191,7 +191,7 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="sendKakaoLink:" destination="Mdk-uF-FJa" eventType="touchUpInside" id="Trb-ew-dWE"/>
+                                            <action selector="sendKakao:" destination="Mdk-uF-FJa" eventType="touchUpInside" id="a2R-JD-GCF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GS7-5f-zUe">
