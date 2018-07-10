@@ -13,6 +13,7 @@ class ModalViewController: UIViewController {
     @IBOutlet var addressText: UILabel!
     
     var stringAddress: String = ""
+    var tempDownloadURL: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,11 +25,10 @@ class ModalViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
-    @IBAction func sendKakaoLink(_ sender: Any) {
+    @IBAction func sendKakao(_ sender: Any) {
         let mapView = MapViewController()
         mapView.sendKakaoLink()
     }
-    
     @IBAction func sendTween(_ sender: Any) {
         
     }

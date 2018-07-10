@@ -12,12 +12,12 @@ import CoreLocation
 class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoderDelegate {
     
     lazy var mapView: MTMapView = MTMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
-    var fullStringAddress: String = ""
+    
     var tempFullStringAddress: String = ""
-    var latitude = 0.0
-    var longitude = 0.0
-    var timestamp: Int = 0
-    var downloadURL: String = ""
+    static var fullStringAddress: String = ""
+    static var latitude = 0.0
+    static var longitude = 0.0
+    static var downloadURL: String = ""
 
     @IBOutlet var mapButtonView: UIView!
     @IBOutlet var locationText: UILabel!
@@ -80,11 +80,10 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             } else {
                 print("Could not find areaNumber")
             }
-            self.latitude = centerLatitude
-            self.longitude = centerLongitude
-            self.locationText.text = self.fullStringAddress
-            self.fullStringAddress = self.tempFullStringAddress
-            print(self.fullStringAddress)
+            MapViewController.latitude = centerLatitude
+            MapViewController.longitude = centerLongitude
+            self.locationText.text = MapViewController.fullStringAddress
+            MapViewController.fullStringAddress = self.tempFullStringAddress
             self.tempFullStringAddress = ""
         })
     }
@@ -95,19 +94,19 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             
             // 컨텐츠
             feedTemplateBuilder.content = KMTContentObject(builderBlock: { (contentBuilder) in
-                contentBuilder.title = self.fullStringAddress
+                contentBuilder.title = MapViewController.fullStringAddress
                 //contentBuilder.desc = fullStringAddress
-                contentBuilder.imageURL = URL(string: self.downloadURL)!
+                contentBuilder.imageURL = URL(string: MapViewController.downloadURL)!
                 contentBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-                    linkBuilder.mobileWebURL = URL(string: self.downloadURL)
+                    linkBuilder.mobileWebURL = URL(string: MapViewController.downloadURL)
                 })
             })
             // 버튼
             feedTemplateBuilder.addButton(KMTButtonObject(builderBlock: { (buttonBuilder) in
                 buttonBuilder.title = "웹지도 보기"
                 buttonBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-                    linkBuilder.webURL = URL(string: "http://map.daum.net/look?p=\(self.latitude),\(self.longitude)")
-                    linkBuilder.mobileWebURL = URL(string: "http://map.daum.net/look?p=\(self.latitude),\(self.longitude)")
+                    linkBuilder.webURL = URL(string: "http://map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)")
+                    linkBuilder.mobileWebURL = URL(string: "http://map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)")
                 })
             }))
             feedTemplateBuilder.addButton(KMTButtonObject(builderBlock: { (buttonBuilder) in
@@ -115,8 +114,8 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
                 buttonBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
 //                    linkBuilder.iosExecutionParams = "param1=value1&param2=value2"
 //                    linkBuilder.androidExecutionParams = "param1=value1&param2=value2"
-                    linkBuilder.webURL = URL(string: "http://m.map.daum.net/look?p=\(self.latitude),\(self.longitude)")
-                    linkBuilder.mobileWebURL = URL(string: "http://m.map.daum.net/look?p=\(self.latitude),\(self.longitude)")
+                    linkBuilder.webURL = URL(string: "http://m.map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)")
+                    linkBuilder.mobileWebURL = URL(string: "http://m.map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)")
                 })
             }))
         }

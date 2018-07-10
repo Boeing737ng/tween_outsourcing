@@ -54,7 +54,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let mapView = segue.destination as! MapViewController
         mapView.timestamp = timestamp
-        mapView.downloadURL = downloadURL
+        MapViewController.downloadURL = downloadURL
     }
 
     @IBAction func openCamera(_ sender: Any) {
