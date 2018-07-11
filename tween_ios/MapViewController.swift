@@ -19,6 +19,9 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     static var latitude = 0.0
     static var longitude = 0.0
     static var downloadURL: String = ""
+    static var daumWebURL = "http://map.daum.net/look?p=\(latitude),\(longitude)"
+    static var daumMobileURL = "http://m.map.daum.net/look?p=\(latitude),\(longitude)"
+    static var googleMapURL = "https://www.google.co.kr/maps/place/\(latitude), \(longitude)"
 
     @IBOutlet var mapButtonView: UIView!
     @IBOutlet var locationText: UILabel!
@@ -106,8 +109,8 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             feedTemplateBuilder.addButton(KMTButtonObject(builderBlock: { (buttonBuilder) in
                 buttonBuilder.title = "웹지도 보기"
                 buttonBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-                    linkBuilder.webURL = URL(string: "http://map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)")
-                    linkBuilder.mobileWebURL = URL(string: "http://map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)")
+                    linkBuilder.webURL = URL(string: MapViewController.daumWebURL)
+                    linkBuilder.mobileWebURL = URL(string: MapViewController.daumWebURL)
                 })
             }))
             feedTemplateBuilder.addButton(KMTButtonObject(builderBlock: { (buttonBuilder) in
@@ -115,8 +118,8 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
                 buttonBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
 //                    linkBuilder.iosExecutionParams = "param1=value1&param2=value2"
 //                    linkBuilder.androidExecutionParams = "param1=value1&param2=value2"
-                    linkBuilder.webURL = URL(string: "http://m.map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)")
-                    linkBuilder.mobileWebURL = URL(string: "http://m.map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)")
+                    linkBuilder.webURL = URL(string: MapViewController.daumMobileURL)
+                    linkBuilder.mobileWebURL = URL(string: MapViewController.daumMobileURL)
                 })
             }))
         }
@@ -147,8 +150,8 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         ref = Database.database().reference()
         ref.childByAutoId().setValue([
             "Date": getCurrentDate(),
-            "DaumUrl": "http://map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)",
-            "GoogleUrl": "https://www.google.co.kr/maps/place/\(MapViewController.latitude), \(MapViewController.longitude)",
+            "DaumUrl": MapViewController.daumWebURL,
+            "GoogleUrl": MapViewController.googleMapURL,
             "Lat": MapViewController.latitude,
             "Lng": MapViewController.longitude,
             "Location": MapViewController.fullStringAddress,
