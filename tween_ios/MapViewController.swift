@@ -53,10 +53,8 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         modalView.stringAddress = locationText.text!
     }
     // Gets the actual string address by coordinate of center point
-    func getStringAddress(){
-       
-        let centerLatitude = mapView.mapCenterPoint.mapPointGeo().latitude
-        let centerLongitude = mapView.mapCenterPoint.mapPointGeo().longitude
+    func getStringAddress(centerLatitude: Double, centerLongitude: Double){
+        
         let findLocation = CLLocation(latitude: centerLatitude, longitude: centerLongitude)
         let geocoder = CLGeocoder()
         let locale = Locale(identifier: "Ko-kr")
@@ -162,7 +160,9 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
 
     // Called when the movement of map is finished
     func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
-        getStringAddress()
+        let latitude = mapCenterPoint.mapPointGeo().latitude
+        let longitude = mapCenterPoint.mapPointGeo().longitude
+        getStringAddress(centerLatitude: latitude, centerLongitude: longitude)
     }
 
     override func didReceiveMemoryWarning() {
