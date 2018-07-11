@@ -134,6 +134,14 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         })
     }
     
+    func getCurrentTime() -> String {
+        let date = Date()
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "yyyy/MM/dd"
+        let dateString = dateFormat.string(from: date)
+        return dateString
+    }
+    
     func sendTweenCall() {
         var ref: DatabaseReference!
         ref = Database.database().reference()
