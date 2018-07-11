@@ -145,7 +145,16 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
     func sendTweenCall() {
         var ref: DatabaseReference!
         ref = Database.database().reference()
-        ref.childByAutoId().setValue(["Location": MapViewController.fullStringAddress])
+        ref.childByAutoId().setValue([
+            "Date": getCurrentDate(),
+            "DaumUrl": "http://map.daum.net/look?p=\(MapViewController.latitude),\(MapViewController.longitude)",
+            "GoogleUrl": "https://www.google.co.kr/maps/place/\(MapViewController.latitude), \(MapViewController.longitude)",
+            "Lat": MapViewController.latitude,
+            "Lng": MapViewController.longitude,
+            "Location": MapViewController.fullStringAddress,
+            "Phone": "",
+            "Photo": MapViewController.downloadURL
+            ])
     }
 
     // Called when the movement of map is finished
