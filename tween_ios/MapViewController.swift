@@ -170,6 +170,10 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         // Dispose of any resources that can be recreated.
     }
     
+    func mapView(_ mapView: MTMapView!, dragStartedOn mapPoint: MTMapPoint!) {
+        locationText.text = ". . ."
+    }
+    
     /*
     // MARK: - Navigation
 
