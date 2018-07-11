@@ -38,6 +38,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         mapView.showCurrentLocationMarker = true
         mapView.currentLocationTrackingMode = .onWithoutHeading
         self.view.insertSubview(mapView, at: 0)
+        getStringAddress(centerLatitude: mapView.mapCenterPoint.mapPointGeo().latitude, centerLongitude: mapView.mapCenterPoint.mapPointGeo().longitude)
     }
     // Apply the style of button container on the map
     func addButtonContainerStyle() {
