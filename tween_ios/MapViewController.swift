@@ -134,7 +134,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         })
     }
     
-    func getCurrentTime() -> String {
+    func getCurrentDate() -> String {
         let date = Date()
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "yyyy/MM/dd"
