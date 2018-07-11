@@ -24,31 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        // Apply loading screen style
-        container.frame = self.view.frame
-        container.center = self.view.center
-        loadingView.frame = self.view.frame
-        loadingView.center = self.view.center
-        loadingView.backgroundColor = UIColor(white: 000, alpha: 0.4)
-        loadingView.clipsToBounds = true
-        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
-    }
-    
-    func startLoading() {
-        loadingView.addSubview(activityIndicator)
-        container.addSubview(loadingView)
-        self.view.addSubview(container)
-        activityIndicator.startAnimating()
-    }
-    
-    func stopLoading() {
-        activityIndicator.stopAnimating()
-        activityIndicator.removeFromSuperview()
-        loadingView.removeFromSuperview()
-        container.removeFromSuperview()
+        setLoadingStyle()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -110,6 +86,33 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
                 print("error")
             }
         }
+    }
+    
+    func setLoadingStyle() {
+        // Apply loading screen style
+        container.frame = self.view.frame
+        container.center = self.view.center
+        loadingView.frame = self.view.frame
+        loadingView.center = self.view.center
+        loadingView.backgroundColor = UIColor(white: 000, alpha: 0.4)
+        loadingView.clipsToBounds = true
+        activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
+    }
+    
+    func startLoading() {
+        loadingView.addSubview(activityIndicator)
+        container.addSubview(loadingView)
+        self.view.addSubview(container)
+        activityIndicator.startAnimating()
+    }
+    
+    func stopLoading() {
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
+        loadingView.removeFromSuperview()
+        container.removeFromSuperview()
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
