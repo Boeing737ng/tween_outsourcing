@@ -83,7 +83,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
                 self.performSegue(withIdentifier: "daumMapView", sender: self)
             })
             if error != nil {
-                print("error")
+                print("Storage Error!!: \(error)")
             }
         }
     }

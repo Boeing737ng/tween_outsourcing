@@ -131,7 +131,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
         }, failure: { (error) in
             // 실패
             //UIAlertController.showMessage(error.localizedDescription)
-            print("error \(error)")
+            print("KakaoLink Error!! \(error)")
             
         })
     }
