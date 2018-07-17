@@ -181,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WMR-5Y-Kku">
-                                <rect key="frame" x="67" y="276" width="240" height="135"/>
+                                <rect key="frame" x="67.5" y="276" width="240" height="135"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ts-bC-S1Z">
                                         <rect key="frame" x="8" y="87" width="110" height="40"/>
@@ -272,13 +272,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2A-rx-1PI">
-                                <rect key="frame" x="27.5" y="93.5" width="320" height="500"/>
+                                <rect key="frame" x="20" y="120" width="335" height="497"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tween_modal_background_no_shadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="WP8-v7-ErC">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="497"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사람 중심 행 스마트 팜 전문 업체" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHr-ql-TBY">
-                                        <rect key="frame" x="90" y="220" width="140" height="60"/>
+                                        <rect key="frame" x="97.5" y="218.5" width="140" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="AVo-5r-fQe"/>
                                             <constraint firstAttribute="height" constant="60" id="SkU-bW-8CN"/>
@@ -288,7 +288,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPs-K9-0mg">
-                                        <rect key="frame" x="287" y="467" width="25" height="25"/>
+                                        <rect key="frame" x="302" y="464" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="pP8-UI-qow"/>
                                             <constraint firstAttribute="height" constant="25" id="zen-NA-IGd"/>
@@ -300,14 +300,14 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tween_main_logo_no_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="i3i-Bq-qZ2">
-                                        <rect key="frame" x="152" y="8" width="160" height="45"/>
+                                        <rect key="frame" x="167" y="8" width="160" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="Nhf-l7-dEG"/>
                                             <constraint firstAttribute="height" constant="45" id="VGR-WB-JFs"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="충남테크노파크 천안밸리 내 Web    : tween.co.kr E-mail : help@tween.co.kr Phone : 04-1588-0500" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wo5-hn-DGv">
-                                        <rect key="frame" x="8.5" y="425" width="168.5" height="67"/>
+                                        <rect key="frame" x="8.5" y="422" width="183.5" height="67"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -323,12 +323,10 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Wo5-hn-DGv" secondAttribute="trailing" constant="143" id="2Vi-Nd-tBA"/>
                                     <constraint firstItem="w3H-t2-Xji" firstAttribute="top" secondItem="O2A-rx-1PI" secondAttribute="top" constant="8" id="8A4-uh-e8v"/>
-                                    <constraint firstAttribute="width" constant="320" id="8xe-Fo-kfG"/>
                                     <constraint firstAttribute="bottom" secondItem="dPs-K9-0mg" secondAttribute="bottom" constant="8" id="APX-fg-AWa"/>
                                     <constraint firstItem="WP8-v7-ErC" firstAttribute="width" secondItem="O2A-rx-1PI" secondAttribute="width" id="Epk-V6-CDf"/>
                                     <constraint firstItem="jHr-ql-TBY" firstAttribute="centerY" secondItem="O2A-rx-1PI" secondAttribute="centerY" id="IDl-g9-TtT"/>
                                     <constraint firstItem="jHr-ql-TBY" firstAttribute="centerX" secondItem="O2A-rx-1PI" secondAttribute="centerX" id="RnD-Z1-cKY"/>
-                                    <constraint firstAttribute="height" constant="500" id="TfI-gs-iag"/>
                                     <constraint firstItem="i3i-Bq-qZ2" firstAttribute="top" secondItem="O2A-rx-1PI" secondAttribute="top" constant="8" id="Vjq-9s-ZNa"/>
                                     <constraint firstItem="WP8-v7-ErC" firstAttribute="height" secondItem="O2A-rx-1PI" secondAttribute="height" id="bmf-hh-XWN"/>
                                     <constraint firstItem="WP8-v7-ErC" firstAttribute="centerX" secondItem="O2A-rx-1PI" secondAttribute="centerX" id="dxA-nC-gU5"/>
@@ -343,11 +341,16 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.60110766267123283" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="O2A-rx-1PI" firstAttribute="centerY" secondItem="Csv-zQ-NsA" secondAttribute="centerY" id="2LH-mJ-KVy"/>
-                            <constraint firstItem="O2A-rx-1PI" firstAttribute="centerX" secondItem="Csv-zQ-NsA" secondAttribute="centerX" id="jYe-4A-hdi"/>
+                            <constraint firstItem="Csv-zQ-NsA" firstAttribute="trailing" secondItem="O2A-rx-1PI" secondAttribute="trailing" constant="20" id="9c9-b3-sNt"/>
+                            <constraint firstItem="O2A-rx-1PI" firstAttribute="leading" secondItem="Csv-zQ-NsA" secondAttribute="leading" constant="20" id="DjD-9O-WdO"/>
+                            <constraint firstItem="O2A-rx-1PI" firstAttribute="top" secondItem="Csv-zQ-NsA" secondAttribute="top" constant="100" id="OWP-Pe-5fx"/>
+                            <constraint firstAttribute="bottom" secondItem="O2A-rx-1PI" secondAttribute="bottom" constant="50" id="h6d-GJ-rSa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Csv-zQ-NsA"/>
                     </view>
+                    <connections>
+                        <outlet property="modalView" destination="O2A-rx-1PI" id="rKY-vk-rmI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkc-Jt-sFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
