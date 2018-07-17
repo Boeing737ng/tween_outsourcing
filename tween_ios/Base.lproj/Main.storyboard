@@ -64,6 +64,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3v-pb-Bgf">
                                         <rect key="frame" x="0.0" y="132" width="130" height="30"/>
                                         <state key="normal" title="contact"/>
+                                        <connections>
+                                            <segue destination="C6q-A5-Gqo" kind="presentation" modalPresentationStyle="overCurrentContext" id="tug-0v-Brq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -259,10 +262,103 @@
             </objects>
             <point key="canvasLocation" x="1740" y="131.78410794602701"/>
         </scene>
+        <!--Contact Modal View Controller-->
+        <scene sceneID="uxo-qh-X8G">
+            <objects>
+                <viewController id="C6q-A5-Gqo" customClass="ContactModalViewController" customModule="tween_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oza-I0-3Xw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2A-rx-1PI">
+                                <rect key="frame" x="27.5" y="93.5" width="320" height="500"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tween_modal_background_no_shadow.png" translatesAutoresizingMaskIntoConstraints="NO" id="WP8-v7-ErC">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="500"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사람 중심 행 스마트 팜 전문 업체" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHr-ql-TBY">
+                                        <rect key="frame" x="90" y="220" width="140" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="AVo-5r-fQe"/>
+                                            <constraint firstAttribute="height" constant="60" id="SkU-bW-8CN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPs-K9-0mg">
+                                        <rect key="frame" x="287" y="467" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="pP8-UI-qow"/>
+                                            <constraint firstAttribute="height" constant="25" id="zen-NA-IGd"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="close.png"/>
+                                        <connections>
+                                            <action selector="closeModal:" destination="Mdk-uF-FJa" eventType="touchUpInside" id="m2h-n7-E7d"/>
+                                            <action selector="closeModal:" destination="C6q-A5-Gqo" eventType="touchUpInside" id="q0V-oj-phK"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tween_main_logo_no_text.png" translatesAutoresizingMaskIntoConstraints="NO" id="i3i-Bq-qZ2">
+                                        <rect key="frame" x="152" y="8" width="160" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="Nhf-l7-dEG"/>
+                                            <constraint firstAttribute="height" constant="45" id="VGR-WB-JFs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="충남테크노파크 천안밸리 내 Web    : tween.co.kr E-mail : help@tween.co.kr Phone : 04-1588-0500" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wo5-hn-DGv">
+                                        <rect key="frame" x="8.5" y="425" width="168.5" height="67"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ver. 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3H-t2-Xji">
+                                        <rect key="frame" x="8" y="8" width="54" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.93734059296307348" green="0.94662119289340096" blue="0.94662119289340096" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Wo5-hn-DGv" secondAttribute="trailing" constant="143" id="2Vi-Nd-tBA"/>
+                                    <constraint firstItem="w3H-t2-Xji" firstAttribute="top" secondItem="O2A-rx-1PI" secondAttribute="top" constant="8" id="8A4-uh-e8v"/>
+                                    <constraint firstAttribute="width" constant="320" id="8xe-Fo-kfG"/>
+                                    <constraint firstAttribute="bottom" secondItem="dPs-K9-0mg" secondAttribute="bottom" constant="8" id="APX-fg-AWa"/>
+                                    <constraint firstItem="WP8-v7-ErC" firstAttribute="width" secondItem="O2A-rx-1PI" secondAttribute="width" id="Epk-V6-CDf"/>
+                                    <constraint firstItem="jHr-ql-TBY" firstAttribute="centerY" secondItem="O2A-rx-1PI" secondAttribute="centerY" id="IDl-g9-TtT"/>
+                                    <constraint firstItem="jHr-ql-TBY" firstAttribute="centerX" secondItem="O2A-rx-1PI" secondAttribute="centerX" id="RnD-Z1-cKY"/>
+                                    <constraint firstAttribute="height" constant="500" id="TfI-gs-iag"/>
+                                    <constraint firstItem="i3i-Bq-qZ2" firstAttribute="top" secondItem="O2A-rx-1PI" secondAttribute="top" constant="8" id="Vjq-9s-ZNa"/>
+                                    <constraint firstItem="WP8-v7-ErC" firstAttribute="height" secondItem="O2A-rx-1PI" secondAttribute="height" id="bmf-hh-XWN"/>
+                                    <constraint firstItem="WP8-v7-ErC" firstAttribute="centerX" secondItem="O2A-rx-1PI" secondAttribute="centerX" id="dxA-nC-gU5"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wo5-hn-DGv" secondAttribute="bottom" constant="8" id="f8S-xc-2bR"/>
+                                    <constraint firstAttribute="trailing" secondItem="i3i-Bq-qZ2" secondAttribute="trailing" constant="8" id="kNz-vd-wx8"/>
+                                    <constraint firstAttribute="trailing" secondItem="dPs-K9-0mg" secondAttribute="trailing" constant="8" id="spq-3G-tkj"/>
+                                    <constraint firstItem="WP8-v7-ErC" firstAttribute="centerY" secondItem="O2A-rx-1PI" secondAttribute="centerY" id="vHa-ht-OI6"/>
+                                    <constraint firstItem="w3H-t2-Xji" firstAttribute="leading" secondItem="O2A-rx-1PI" secondAttribute="leading" constant="8" id="ws9-4v-hMX"/>
+                                    <constraint firstItem="Wo5-hn-DGv" firstAttribute="leading" secondItem="O2A-rx-1PI" secondAttribute="leading" constant="8.5" id="yEg-mI-WUo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.60110766267123283" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="O2A-rx-1PI" firstAttribute="centerY" secondItem="Csv-zQ-NsA" secondAttribute="centerY" id="2LH-mJ-KVy"/>
+                            <constraint firstItem="O2A-rx-1PI" firstAttribute="centerX" secondItem="Csv-zQ-NsA" secondAttribute="centerX" id="jYe-4A-hdi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Csv-zQ-NsA"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fkc-Jt-sFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="862.21889055472275"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="close.png" width="2000" height="2000"/>
         <image name="close_dark.png" width="980" height="980"/>
         <image name="ping.png" width="213" height="426"/>
+        <image name="tween_main_logo_no_text.png" width="900" height="230"/>
+        <image name="tween_modal_background_no_shadow.png" width="650" height="1149"/>
         <image name="tween_simple_logo.png" width="900" height="286"/>
     </resources>
 </document>
