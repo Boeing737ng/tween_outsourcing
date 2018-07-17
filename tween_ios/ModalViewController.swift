@@ -34,7 +34,7 @@ class ModalViewController: UIViewController {
     @IBAction func sendKakao(_ sender: Any) {
         startLoading()
         mapView.sendKakaoLink()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.stopLoading()
         }
     }
