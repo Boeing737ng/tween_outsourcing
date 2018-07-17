@@ -65,7 +65,7 @@
                                         <rect key="frame" x="0.0" y="132" width="130" height="30"/>
                                         <state key="normal" title="contact"/>
                                         <connections>
-                                            <segue destination="C6q-A5-Gqo" kind="presentation" modalPresentationStyle="overCurrentContext" id="tug-0v-Brq"/>
+                                            <segue destination="C6q-A5-Gqo" kind="presentation" modalPresentationStyle="overCurrentContext" id="DPV-T9-nxg"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -93,6 +93,7 @@
                     </view>
                     <connections>
                         <segue destination="Y52-fd-y2c" kind="presentation" identifier="daumMapView" id="vOv-FU-Wjb"/>
+                        <segue destination="C6q-A5-Gqo" kind="presentation" identifier="contactModal" modalPresentationStyle="overCurrentContext" id="1dd-DM-qQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -361,4 +362,7 @@
         <image name="tween_modal_background_no_shadow.png" width="650" height="1149"/>
         <image name="tween_simple_logo.png" width="900" height="286"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="DPV-T9-nxg"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -23,8 +23,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        openContactModal()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            self.openContactModal()
+        })
         // Do any additional setup after loading the view, typically from a nib.
         setLoadingStyle()
+    }
+
+    func openContactModal() {
+        self.performSegue(withIdentifier: "contactModal", sender: self)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
