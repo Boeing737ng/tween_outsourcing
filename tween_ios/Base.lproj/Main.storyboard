@@ -348,9 +348,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Csv-zQ-NsA"/>
                     </view>
-                    <connections>
-                        <outlet property="modalView" destination="O2A-rx-1PI" id="rKY-vk-rmI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkc-Jt-sFE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,6 +363,6 @@
         <image name="tween_simple_logo.png" width="900" height="286"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DPV-T9-nxg"/>
+        <segue reference="1dd-DM-qQp"/>
     </inferredMetricsTieBreakers>
 </document>
