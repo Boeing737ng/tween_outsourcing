@@ -23,7 +23,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        openContactModal()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
             self.openContactModal()
         })
