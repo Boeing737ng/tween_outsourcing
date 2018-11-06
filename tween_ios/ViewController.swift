@@ -67,13 +67,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         }
     }
     // Called when image is taken by camera or is selected from device's gallery
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         print("Image Selected")
         startLoading()
-        let mediaType = info[UIImagePickerControllerMediaType] as! NSString
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
         if mediaType.isEqual(to: kUTTypeImage as NSString as String) {
-            if let capturedImage = info[UIImagePickerControllerOriginalImage] as? UIImage,
-                let imageData = UIImageJPEGRepresentation(capturedImage, 0.8) {
+            if let capturedImage = info[.originalImage] as? UIImage,
+                let imageData = capturedImage.jpegData(compressionQuality: 0.8) {
                 uploadToFirebaseStorage(data: imageData)
             }
 //            // Saves the taken picture to photo album
@@ -113,7 +113,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
         loadingView.backgroundColor = UIColor(white: 000, alpha: 0.4)
         loadingView.clipsToBounds = true
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
         activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
     }
     

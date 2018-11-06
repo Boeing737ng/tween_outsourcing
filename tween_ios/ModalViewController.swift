@@ -56,7 +56,7 @@ class ModalViewController: UIViewController {
         loadingView.backgroundColor = UIColor(white: 000, alpha: 0.4)
         loadingView.clipsToBounds = true
         activityIndicator.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        activityIndicator.style = UIActivityIndicatorView.Style.whiteLarge
         activityIndicator.center = CGPoint(x: loadingView.frame.size.width / 2, y: loadingView.frame.size.height / 2)
     }
     
