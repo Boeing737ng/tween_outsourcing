@@ -12,6 +12,9 @@ import Firebase
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavigationControllerDelegate {
     
+    
+    @IBOutlet var contactModalImageView: UIImageView!
+    
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     let container: UIView = UIView()
     let loadingView: UIView = UIView()
@@ -23,18 +26,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-            self.openContactModal()
-        })
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+//            self.openContactModal()
+//        })
+        let tabGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.openContactModal))
+        contactModalImageView.addGestureRecognizer(tabGesture)
+        contactModalImageView.isUserInteractionEnabled = true
         // Do any additional setup after loading the view, typically from a nib.
         setLoadingStyle()
     }
 
-    func openContactModal() {
+    @objc func openContactModal() {
         self.performSegue(withIdentifier: "contactModal", sender: self)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-            self.dismiss(animated: true, completion: nil)
-        })
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+//            self.dismiss(animated: true, completion: nil)
+//        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
