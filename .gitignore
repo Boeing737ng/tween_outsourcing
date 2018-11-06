@@ -1,5 +1,8 @@
 *.xcodeproj
+*.xcworkspace
 .DS_Store
 *Info.plist
 *.framework
 *.embeddedframework
+*.lock
+/Pods
