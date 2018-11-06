@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -277,15 +273,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2A-rx-1PI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ver. 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3H-t2-Xji">
-                                        <rect key="frame" x="8" y="8" width="54" height="16"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.93734059296307348" green="0.94662119289340096" blue="0.94662119289340096" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPs-K9-0mg">
-                                        <rect key="frame" x="381" y="28" width="25" height="25"/>
+                                        <rect key="frame" x="342" y="28" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="pP8-UI-qow"/>
                                             <constraint firstAttribute="height" constant="25" id="zen-NA-IGd"/>
@@ -314,13 +303,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PSW-t9-gZe">
-                                        <rect key="frame" x="196" y="514" width="146.5" height="76"/>
+                                        <rect key="frame" x="189.5" y="514" width="153" height="76"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pw5-r5-sLt">
-                                                <rect key="frame" x="0.0" y="0.0" width="146.5" height="76"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="153" height="76"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enR-44-YhZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="13"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="153" height="13"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modal_location.png" translatesAutoresizingMaskIntoConstraints="NO" id="LRQ-V2-t32">
                                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="13"/>
@@ -329,8 +318,8 @@
                                                                     <constraint firstAttribute="width" constant="10" id="bGY-GD-Wns"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   충남 테크노 파크 천안밸리 내" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmK-HI-7rP">
-                                                                <rect key="frame" x="10" y="0.0" width="136.5" height="13"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     충남 테크노 파크 천안밸리 내" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmK-HI-7rP">
+                                                                <rect key="frame" x="10" y="0.0" width="143" height="13"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -338,7 +327,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OLT-4S-FuI">
-                                                        <rect key="frame" x="0.0" y="23" width="83" height="12"/>
+                                                        <rect key="frame" x="0.0" y="23" width="89" height="12"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modal_web.png" translatesAutoresizingMaskIntoConstraints="NO" id="UqY-wa-u2d">
                                                                 <rect key="frame" x="0.0" y="0.0" width="12" height="12"/>
@@ -347,8 +336,8 @@
                                                                     <constraint firstAttribute="width" constant="12" id="tOG-VG-EE3"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   tween.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-7a-DPM">
-                                                                <rect key="frame" x="12" y="0.0" width="71" height="12"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     tween.co.kr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcZ-7a-DPM">
+                                                                <rect key="frame" x="12" y="0.0" width="77" height="12"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -374,7 +363,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixV-aG-hpl">
-                                                        <rect key="frame" x="0.0" y="65" width="102.5" height="11"/>
+                                                        <rect key="frame" x="0.0" y="65" width="106" height="11"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="modal_phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="thP-RT-qQ8">
                                                                 <rect key="frame" x="0.0" y="0.0" width="11" height="11"/>
@@ -383,8 +372,8 @@
                                                                     <constraint firstAttribute="height" constant="11" id="YI9-EJ-3Hd"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    04-1588-0500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEH-Bj-NVc">
-                                                                <rect key="frame" x="11" y="0.0" width="91.5" height="11"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     04-1588-0500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEH-Bj-NVc">
+                                                                <rect key="frame" x="11" y="0.0" width="95" height="11"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -395,14 +384,30 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ver. 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3H-t2-Xji">
+                                        <rect key="frame" x="324" y="647" width="43" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.93734059296307348" green="0.94662119289340096" blue="0.94662119289340096" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@ 2018 Tween. All rights reserved." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Etd-Yg-qkr">
+                                        <rect key="frame" x="111" y="648" width="153" height="11"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.30980392156862746" green="0.44705882352941173" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="dPs-K9-0mg" firstAttribute="leading" secondItem="O2A-rx-1PI" secondAttribute="leading" constant="381" id="0Tc-GN-AN7"/>
+                                    <constraint firstAttribute="bottom" secondItem="Etd-Yg-qkr" secondAttribute="bottom" constant="8" id="3hB-bs-Shv"/>
+                                    <constraint firstAttribute="trailing" secondItem="dPs-K9-0mg" secondAttribute="trailing" constant="8" id="3xs-EH-ULt"/>
+                                    <constraint firstItem="Etd-Yg-qkr" firstAttribute="centerX" secondItem="O2A-rx-1PI" secondAttribute="centerX" id="BfB-2D-56r"/>
+                                    <constraint firstAttribute="bottom" secondItem="w3H-t2-Xji" secondAttribute="bottom" constant="8" id="CJd-Qg-Z2h"/>
                                     <constraint firstAttribute="bottom" secondItem="PSW-t9-gZe" secondAttribute="bottom" constant="77" id="Ff1-7V-OeR"/>
                                     <constraint firstAttribute="bottom" secondItem="C48-PG-hRw" secondAttribute="bottom" constant="445.66666666666669" id="Ok3-8w-WgR"/>
                                     <constraint firstAttribute="trailing" secondItem="PSW-t9-gZe" secondAttribute="trailing" constant="32.5" id="QKA-fc-h9y"/>
-                                    <constraint firstItem="dPs-K9-0mg" firstAttribute="top" secondItem="O2A-rx-1PI" secondAttribute="top" constant="28" id="eRA-Ij-Uye"/>
+                                    <constraint firstItem="dPs-K9-0mg" firstAttribute="top" secondItem="O2A-rx-1PI" secondAttribute="top" constant="28" id="XNf-ox-Vmz"/>
+                                    <constraint firstAttribute="trailing" secondItem="w3H-t2-Xji" secondAttribute="trailing" constant="8" id="dFB-ed-Lx1"/>
                                     <constraint firstAttribute="trailing" secondItem="C48-PG-hRw" secondAttribute="trailing" constant="35" id="x9D-bK-Ogq"/>
                                 </constraints>
                             </view>
