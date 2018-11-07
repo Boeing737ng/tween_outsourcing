@@ -14,6 +14,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
     
     
     @IBOutlet var contactModalImageView: UIImageView!
+    @IBOutlet var galleryButton: UIStackView!
+    @IBOutlet var cameraButton: UIStackView!
     
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     let container: UIView = UIView()
@@ -29,11 +31,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,  UINavi
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
 //            self.openContactModal()
 //        })
-        let tabGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.openContactModal))
-        contactModalImageView.addGestureRecognizer(tabGesture)
-        contactModalImageView.isUserInteractionEnabled = true
         // Do any additional setup after loading the view, typically from a nib.
+        self.enableTabAction()
         setLoadingStyle()
+    }
+    
+    func enableTabAction() {
+        let isOpenContactModal = UITapGestureRecognizer(target: self, action: #selector(ViewController.openContactModal))
+        contactModalImageView.addGestureRecognizer(isOpenContactModal)
+        contactModalImageView.isUserInteractionEnabled = true
+        
+        let isChooseFromGallery = UITapGestureRecognizer(target: self, action: #selector(ViewController.chooseFromGallery))
+        galleryButton.addGestureRecognizer(isChooseFromGallery)
+        galleryButton.isUserInteractionEnabled = true
+        
+        let isOpenCamera = UITapGestureRecognizer(target: self, action: #selector(ViewController.openCamera))
+        cameraButton.addGestureRecognizer(isOpenCamera)
+        cameraButton.isUserInteractionEnabled = true
     }
 
     @objc func openContactModal() {
