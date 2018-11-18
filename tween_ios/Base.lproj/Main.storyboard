@@ -495,7 +495,7 @@
     </scenes>
     <resources>
         <image name="close.png" width="2000" height="2000"/>
-        <image name="close_dark.png" width="512" height="512"/>
+        <image name="close_dark.png" width="42" height="40"/>
         <image name="info-logo.png" width="70" height="70"/>
         <image name="main_background_chat_image.png" width="851" height="1650"/>
         <image name="main_camera.png" width="139" height="117"/>
