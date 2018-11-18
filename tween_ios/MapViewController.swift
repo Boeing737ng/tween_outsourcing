@@ -25,12 +25,25 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
 
     @IBOutlet var mapButtonView: UIView!
     @IBOutlet var locationText: UILabel!
+    @IBOutlet var sendLocationButton: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         openDaumMap()
         addButtonContainerStyle()
+        self.enableTabAction()
     }
+    
+    func enableTabAction() {
+        let isSendCurrentLocation = UITapGestureRecognizer(target: self, action: #selector(MapViewController.openCofirmModal))
+        sendLocationButton.addGestureRecognizer(isSendCurrentLocation)
+        sendLocationButton.isUserInteractionEnabled = true
+    }
+    
+    @objc func openCofirmModal() {
+        self.performSegue(withIdentifier: "methodConfirmModal", sender: self)
+    }
+    
     // Create and display Daum map
     func openDaumMap() {
         mapView.delegate = self
