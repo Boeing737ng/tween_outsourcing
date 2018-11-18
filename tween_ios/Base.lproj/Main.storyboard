@@ -310,6 +310,8 @@
                     </view>
                     <connections>
                         <outlet property="addressText" destination="OP3-b9-gL2" id="Adw-7e-cMO"/>
+                        <outlet property="kakaoButton" destination="3ts-bC-S1Z" id="Q3e-Ve-AJL"/>
+                        <outlet property="tweenCallButton" destination="GS7-5f-zUe" id="qdb-o8-qh3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuI-Yy-T2E" userLabel="First Responder" sceneMemberID="firstResponder"/>

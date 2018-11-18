@@ -11,6 +11,8 @@ import UIKit
 class ModalViewController: UIViewController {
 
     @IBOutlet var addressText: UILabel!
+    @IBOutlet var kakaoButton: UIButton!
+    @IBOutlet var tweenCallButton: UIButton!
     
     let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     let container: UIView = UIView()
@@ -24,6 +26,7 @@ class ModalViewController: UIViewController {
         super.viewDidLoad()
         addressText.text = stringAddress
         setLoadingStyle()
+        setButtonBorder()
         // Do any additional setup after loading the view.
     }
     
@@ -38,6 +41,16 @@ class ModalViewController: UIViewController {
             self.stopLoading()
         }
     }
+    
+    func setButtonBorder() {
+        let borderColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1.0).cgColor
+        let borderWidth = 2 / UIScreen.main.nativeScale
+        kakaoButton.layer.borderWidth = borderWidth
+        kakaoButton.layer.borderColor = borderColor
+        tweenCallButton.layer.borderWidth = borderWidth
+        tweenCallButton.layer.borderColor = borderColor
+    }
+    
     @IBAction func sendTween(_ sender: Any) {
         mapView.sendTweenCall()
     }
