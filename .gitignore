@@ -5,4 +5,5 @@
 *.framework
 *.embeddedframework
 *.lock
+Notification.swift
 /Pods
