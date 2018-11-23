@@ -173,6 +173,7 @@ class MapViewController: UIViewController,MTMapViewDelegate,MTMapReverseGeoCoder
             ])
         notification.sendNotification()
     }
+
     // Called when the movement of map is finished
     func mapView(_ mapView: MTMapView!, finishedMapMoveAnimation mapCenterPoint: MTMapPoint!) {
         let latitude = mapCenterPoint.mapPointGeo().latitude
