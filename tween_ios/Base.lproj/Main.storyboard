@@ -312,11 +312,104 @@
                         <outlet property="addressText" destination="OP3-b9-gL2" id="Adw-7e-cMO"/>
                         <outlet property="kakaoButton" destination="3ts-bC-S1Z" id="Q3e-Ve-AJL"/>
                         <outlet property="tweenCallButton" destination="GS7-5f-zUe" id="qdb-o8-qh3"/>
+                        <segue destination="eZG-n9-Cpr" kind="presentation" identifier="confirmTweenCall" animates="NO" id="NQR-3p-mgC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BuI-Yy-T2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1740" y="131.78410794602701"/>
+        </scene>
+        <!--Confirm Modal View Controller-->
+        <scene sceneID="9hX-Eo-3PM">
+            <objects>
+                <viewController id="eZG-n9-Cpr" customClass="ConfirmModalViewController" customModule="tween_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Nm-o5-v70">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cB-VQ-MMV">
+                                <rect key="frame" x="0.0" y="253.5" width="375" height="180"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="hdO-9w-qlE" userLabel="Button Container">
+                                        <rect key="frame" x="70" y="124" width="235" height="40"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZv-oc-d3r">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="40"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="6EL-dM-iZh"/>
+                                                    <constraint firstAttribute="height" constant="40" id="9qC-wn-mxj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="sendKakao:" destination="Mdk-uF-FJa" eventType="touchUpInside" id="LyS-Gk-78z"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4W0-cC-TcX">
+                                                <rect key="frame" x="125" y="0.0" width="110" height="40"/>
+                                                <color key="backgroundColor" red="0.32549019610000002" green="0.58823529409999997" blue="0.48627450979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="IVd-EV-3EC"/>
+                                                    <constraint firstAttribute="width" constant="110" id="N16-wh-gwZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <state key="normal" title="확인">
+                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="moveToMainPage:" destination="eZG-n9-Cpr" eventType="touchUpInside" id="1fO-gv-InW"/>
+                                                    <action selector="moveToMainPage:" destination="6HU-A0-YFT" eventType="touchUpInside" id="HRc-xJ-KOJ"/>
+                                                    <action selector="sendTween:" destination="Mdk-uF-FJa" eventType="touchUpInside" id="h0B-hB-RpT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRj-Qo-gch">
+                                        <rect key="frame" x="70" y="14" width="235" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="hdO-9w-qlE" secondAttribute="bottom" constant="16" id="1cM-6t-5KG"/>
+                                    <constraint firstItem="hdO-9w-qlE" firstAttribute="centerX" secondItem="5cB-VQ-MMV" secondAttribute="centerX" id="2BB-mh-urk"/>
+                                    <constraint firstAttribute="height" constant="180" id="8Jl-hn-nty"/>
+                                    <constraint firstItem="sRj-Qo-gch" firstAttribute="centerX" secondItem="5cB-VQ-MMV" secondAttribute="centerX" id="bya-Mc-uG1"/>
+                                    <constraint firstItem="sRj-Qo-gch" firstAttribute="width" secondItem="hdO-9w-qlE" secondAttribute="width" id="ixo-AG-OQp"/>
+                                    <constraint firstItem="sRj-Qo-gch" firstAttribute="top" secondItem="5cB-VQ-MMV" secondAttribute="top" constant="14" id="rHi-o6-Mei"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="트윈을 호출하였습니다." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTj-9G-Xv4">
+                                <rect key="frame" x="70" y="335.5" width="235" height="16"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.25" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5cB-VQ-MMV" firstAttribute="centerY" secondItem="aJ7-v2-GTU" secondAttribute="centerY" id="0oy-TC-TxW"/>
+                            <constraint firstItem="5cB-VQ-MMV" firstAttribute="centerX" secondItem="aJ7-v2-GTU" secondAttribute="centerX" id="Oq7-mW-86X"/>
+                            <constraint firstItem="PTj-9G-Xv4" firstAttribute="centerY" secondItem="7Nm-o5-v70" secondAttribute="centerY" constant="10" id="PCu-iK-VFD"/>
+                            <constraint firstItem="PTj-9G-Xv4" firstAttribute="centerX" secondItem="7Nm-o5-v70" secondAttribute="centerX" id="QNq-oA-UaY"/>
+                            <constraint firstItem="PTj-9G-Xv4" firstAttribute="width" secondItem="sRj-Qo-gch" secondAttribute="width" id="jZu-E7-Y5D"/>
+                            <constraint firstItem="5cB-VQ-MMV" firstAttribute="width" secondItem="7Nm-o5-v70" secondAttribute="width" id="rCv-Rz-O4w"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aJ7-v2-GTU"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToMain" id="FAt-ZB-NcE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZLL-g0-Uqn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6HU-A0-YFT" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="862"/>
         </scene>
         <!--Contact Modal View Controller-->
         <scene sceneID="uxo-qh-X8G">
