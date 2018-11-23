@@ -53,6 +53,7 @@ class ModalViewController: UIViewController {
     
     @IBAction func sendTween(_ sender: Any) {
         mapView.sendTweenCall()
+        self.performSegue(withIdentifier: "confirmTweenCall", sender: self)
     }
     
     override func didReceiveMemoryWarning() {
