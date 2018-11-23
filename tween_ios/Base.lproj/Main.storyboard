@@ -206,7 +206,7 @@
                         <outlet property="locationText" destination="3vW-rP-koE" id="vZF-aV-DlS"/>
                         <outlet property="mapButtonView" destination="g9w-3M-Po8" id="G93-kc-HJr"/>
                         <outlet property="sendLocationButton" destination="g9w-3M-Po8" id="fQL-S3-bSm"/>
-                        <segue destination="Mdk-uF-FJa" kind="presentation" identifier="methodConfirmModal" id="nFF-Ca-XUM"/>
+                        <segue destination="Mdk-uF-FJa" kind="presentation" identifier="methodConfirmModal" animates="NO" id="nFF-Ca-XUM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIP-ic-Dn2" userLabel="First Responder" sceneMemberID="firstResponder"/>
